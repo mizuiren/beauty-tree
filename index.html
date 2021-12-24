@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>文档树、目录树、折叠树、一维树实现方案及父子节点样式</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/qtree.css" rel="stylesheet">
+</head>
+<body style="background: #5a5959;">
+<ul id="tree-ul" class="qtree"></ul>
+</body>
+<script type="text/javascript" src="js/qtree.js"></script>
+<script type="text/javascript">
+const data = [
+	{
+		title: 'xxxxx1111111',
+		id: 1
+	},
+	{
+		title: 'xxxxx2222222',
+		id: 2
+	},
+	{
+		title: 'xxxxx3333333',
+		id: 3,
+		children: [
+			{
+				title: 'xxxxx3333333.1',
+				id: 4
+			},
+			{
+				title: 'xxxxx3333333.2',
+				id: 5
+			},
+			{
+				title: 'xxxxx3333333.3',
+				id: 6
+			},
+			{
+				title: 'xxxxx3333333.4',
+				id: 7,
+				children: [
+					{
+						title: 'xxxxx3333333.4.1',
+						id: 8
+					},
+					{
+						title: 'xxxxx3333333.4.2',
+						id: 9
+					},
+					{
+						title: 'xxxxx3333333.4.3',
+						id: 10
+					},
+				]
+			},
+			{
+				title: 'xxxxx3333333.5',
+				id: 11,
+			},
+		]
+	},
+	{
+		title: 'xxxxx4444444',
+		id: 12,
+		childrenStatu: 'close',
+		children: [
+			{
+				title: 'xxxxx4444444.1',
+				id: 13
+			},
+			{
+				title: 'xxxxx4444444.2',
+				id: 14
+			},
+			{
+				title: 'xxxxx4444444.3',
+				id: 15
+			},
+		]
+	},
+	{
+		title: 'xxxxx5555555',
+		id: 16
+	}
+];
+renderQtreeData(data, document.getElementById('tree-ul'));
+</script>
+</html>

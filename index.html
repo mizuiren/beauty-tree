@@ -4,6 +4,15 @@
 <title>文档树、目录树、折叠树、一维树实现方案及父子节点样式</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="css/qtree.css" rel="stylesheet">
+    <style>
+        #tree-ul {
+            padding: 5px 10px;
+            background: #686868;
+            width: 300px;
+            max-height: 500px;
+            overflow: auto;
+        }
+    </style>
 </head>
 <body style="background: #5a5959;">
 <ul id="tree-ul" class="qtree"></ul>
@@ -40,7 +49,7 @@ const data = [
 				id: 7,
 				children: [
 					{
-						title: 'xxxxx3333333.4.1',
+						title: 'xxxxx3333333.4.11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111',
 						id: 8
 					},
 					{
@@ -81,7 +90,78 @@ const data = [
 	{
 		title: 'xxxxx5555555',
 		id: 16
-	}
+	},
+    {
+        title: 'xxxxx1111111',
+        id: 17
+    },
+    {
+        title: 'xxxxx2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222',
+        id: 18
+    },
+    {
+        title: 'xxxxx3333333',
+        id: 19,
+        children: [
+            {
+                title: 'xxxxx3333333.1',
+                id: 20
+            },
+            {
+                title: 'xxxxx3333333.2',
+                id: 21
+            },
+            {
+                title: 'xxxxx3333333.3',
+                id: 22
+            },
+            {
+                title: 'xxxxx3333333.4',
+                id: 23,
+                children: [
+                    {
+                        title: 'xxxxx3333333.4.11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111',
+                        id: 24
+                    },
+                    {
+                        title: 'xxxxx3333333.4.2',
+                        id: 25
+                    },
+                    {
+                        title: 'xxxxx3333333.4.3',
+                        id: 26
+                    },
+                ]
+            },
+            {
+                title: 'xxxxx3333333.5',
+                id: 27,
+            },
+        ]
+    },
+    {
+        title: 'xxxxx4444444',
+        id: 28,
+        childrenStatu: 'close',
+        children: [
+            {
+                title: 'xxxxx4444444.1',
+                id: 29
+            },
+            {
+                title: 'xxxxx4444444.2',
+                id: 30
+            },
+            {
+                title: 'xxxxx4444444.3',
+                id: 31
+            },
+        ]
+    },
+    {
+        title: 'xxxxx5555555',
+        id: 32
+    }
 ];
 renderQtreeData(data, document.getElementById('tree-ul'));
 </script>

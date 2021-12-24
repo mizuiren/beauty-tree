@@ -13,3 +13,42 @@
     renderQtreeData(data, document.getElementById('tree-ul'));
 
 容器元素必须是ul。
+
+data的数据结构：
+
+    [
+    	{
+    		title: 'xxxxx3333333',
+    		id: 3,
+    		children: [
+    			{
+    				title: 'xxxxx3333333.1',
+    				id: 4
+    			},
+    			{
+    				title: 'xxxxx3333333.4',
+    				id: 7,
+    				children: [
+    					{
+    						title: 'xxxxx3333333.4.1',
+    						id: 8
+    					},
+    					{
+    						title: 'xxxxx3333333.4.2',
+    						id: 9
+    					},
+    					{
+    						title: 'xxxxx3333333.4.3',
+    						id: 10
+    					},
+    				]
+    			},
+    		]
+    	},
+    	{
+    		title: 'xxxxx4444444',
+    		id: 12
+    	}
+     ];
+     
+注意：id不能出现重复

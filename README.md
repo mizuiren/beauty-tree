@@ -6,6 +6,8 @@
 * 原生js实现，无其他任何依赖
 * 样式美观
 
+![view](https://user-images.githubusercontent.com/16829552/147371329-37d5bf88-90a4-4b49-b851-c2f95d582b6c.png)
+
 使用：
 
 页面引入qtree.js和qtree.css之后使用renderQtreeData渲染数据

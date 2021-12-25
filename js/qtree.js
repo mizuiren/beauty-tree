@@ -46,6 +46,7 @@ function renderQtreeData(_data, container) {
 	if(container.tagName !== 'UL') {
 		throw new Error('容器必须是ul元素')
 	}
+	container.className = (container.className || '') + ' qtree';
 	let html = render(_data);
 	/**
 	 * @param  {[Array]} _data        [需要渲染的数据]

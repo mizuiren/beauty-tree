@@ -98,7 +98,7 @@ function countShowChildLi(arr) {
 }
 
 //点击展开折叠按钮事件动作，寻找子节点，把子节点隐藏或显示
-function toggleChildren(ele) {
+windows.toggleChildren = function(ele) {
 	const $li = ele.parentNode.parentNode;
 	const liId = $li.getAttribute('data-id');
 	const type = ele.className.match(/\bopen\b/) ? 'open' : 'close';

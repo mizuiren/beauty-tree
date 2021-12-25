@@ -6,7 +6,7 @@
 * 原生js实现，无其他任何依赖
 * 样式美观
 
-![view](https://user-images.githubusercontent.com/16829552/147371329-37d5bf88-90a4-4b49-b851-c2f95d582b6c.png)
+![view](https://user-images.githubusercontent.com/16829552/147377048-91420475-ba45-4c9f-ad77-d475704f1a13.png)
 
 使用：
 

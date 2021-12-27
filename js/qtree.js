@@ -1,4 +1,4 @@
-(function () {
+(function(){
 	//配置
 	const liHeight = 22, //行高
 		gap = 10;//折叠或展开按钮之间的距离
@@ -7,47 +7,47 @@
 	 * @param  {[Array]} _data                [需要渲染的数据]
 	 * @param {[HTMLUListElement]} container  [树的容器，dom对象]
 	 * @return {[String]}                     [一维li列表的html dom字符串]
-	 * {[数据格式]}
+	 * {[数据格式]} 
 	 [
-	 {
-		title: 'xxxxx3333333',
-		id: 3,
-		children: [
-			{
-				title: 'xxxxx3333333.1',
-				id: 4
-			},
-			{
-				title: 'xxxxx3333333.4',
-				id: 7,
-				children: [
-					{
-						title: 'xxxxx3333333.4.1',
-						id: 8
-					},
-					{
-						title: 'xxxxx3333333.4.2',
-						id: 9
-					},
-					{
-						title: 'xxxxx3333333.4.3',
-						id: 10
-					},
-				]
-			},
-		]
-	},
-	 {
-		title: 'xxxxx4444444',
-		id: 12
-	}
+		{
+			title: 'xxxxx3333333',
+			id: 3,
+			children: [
+				{
+					title: 'xxxxx3333333.1',
+					id: 4
+				},
+				{
+					title: 'xxxxx3333333.4',
+					id: 7,
+					children: [
+						{
+							title: 'xxxxx3333333.4.1',
+							id: 8
+						},
+						{
+							title: 'xxxxx3333333.4.2',
+							id: 9
+						},
+						{
+							title: 'xxxxx3333333.4.3',
+							id: 10
+						},
+					]
+				},
+			]
+		},
+		{
+			title: 'xxxxx4444444',
+			id: 12
+		}
 	 ];
 	 */
 	window.renderQtreeData = function(_data, container) {
 		if(container.tagName !== 'UL') {
 			throw new Error('容器必须是ul元素')
 		}
-		container.className = (container.className || '') + ' qtree';
+	    container.className = (container.className || '') + ' qtree';
 		let html = render(_data);
 		/**
 		 * @param  {[Array]} _data        [需要渲染的数据]
@@ -70,12 +70,7 @@
 				if(i === _data.length - 1) {
 					guildlineHeight = 0;
 				}
-				html += `<li data-id="${obj.id}" parent="${_parent}" has_child="${obj.children && obj.children.length ? 1 : 0}" class="space${space}" style="padding-left:${space * 2}em;display:${display};">
-			<div class="con">
-				<i class="bg-icon ${status}" onclick="toggleChildren(this);"><i></i><span class="guildline" style="height:${guildlineHeight}px;"></span></i>
-				<span class="title">${obj.title}</span>
-			</div>
-		</li>`;
+				html += `<li data-id="${obj.id}" parent="${_parent}" has_child="${obj.children && obj.children.length ? 1 : 0}" class="space${space}" style="padding-left:${space * 2}em;display:${display};"><div class="con"><i class="bg-icon ${status}" onclick="toggleChildren(this);"><i></i><span class="guildline" style="height:${guildlineHeight}px;"></span></i><span class="title">${obj.title}</span></div></li>`;
 				if(obj.children) {
 					html += render(obj.children, space + 1, obj.id, obj.childrenStatu);
 				}
@@ -98,9 +93,9 @@
 		return count;
 	}
 
-	//点击展开折叠按钮事件动作，寻找子节点，把子节点隐藏或显示
+	//点击展开折叠按钮事件动作，寻找子节点，把子节点隐藏或显示.
 	window.toggleChildren = function(ele) {
-		const $li = ele.parentNode.parentNode;
+		const $li = ele.parentNode.parentNode; 
 		const liId = $li.getAttribute('data-id');
 		const type = ele.className.match(/\bopen\b/) ? 'open' : 'close';
 		_toggle(liId);

@@ -1,5 +1,10 @@
 .qtree {
 	position: relative;
+    padding: 5px 10px;
+    background: #686868;
+    width: 300px;
+    max-height: 500px;
+    overflow: auto;
 }
 /**列表li样式**/
 .qtree li {
@@ -40,7 +45,7 @@
 	left: 2px;
 	cursor: default;
 }
-.qtree li[has_child="0"] .bg-icon > i:before, .qtree li[has_child="0"] .bg-icon > i:after {
+.qtree li[has_child="0"] .bg-icon >i:before, .qtree li[has_child="0"] .bg-icon > i:after {
 	display: none;
 }
 /**+-折叠按钮右侧连接线**/

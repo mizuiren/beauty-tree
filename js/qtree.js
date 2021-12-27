@@ -3,7 +3,7 @@
 	const liHeight = 22, //行高
 		gap = 10;//折叠或展开按钮之间的距离
 	/**
-	 * [主函数，递归渲染数组成有层次结构的dom树]
+	 * [主函数，递归渲染数组成有平级结构的dom树]
 	 * @param  {[Array]} _data                [需要渲染的数据]
 	 * @param {[HTMLUListElement]} container  [树的容器，dom对象]
 	 * @return {[String]}                     [一维li列表的html dom字符串]
@@ -117,8 +117,13 @@
 				const hasChild = li.getAttribute('has_child');
 				const guildLine = li.querySelector('.guildline');
 				if(hasChild === '1') {
-					const childLength = countShowLi(li.getAttribute('data-id'));
-					guildLine.style.height = childLength ? (childLength * liHeight + gap) + 'px' : '10px';
+					const sameChild = li.parentNode.querySelectorAll('[parent="'+_parent+'"]');
+					if(sameChild[sameChild.length - 1] !== li) {
+						const childLength = countShowLi(li.getAttribute('data-id'));
+						guildLine.style.height = childLength ? (childLength * liHeight + gap) + 'px' : '10px';
+					} else {
+						guildLine.style.height = '0';
+					}
 				} else {
 					guildLine.style.height = '10px';
 				}
